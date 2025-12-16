@@ -1,0 +1,14 @@
+D:\windows-runner-set-up-testing\RunnerPOC\bin\Debug\net10.0\RunnerPOC.exe
+D:\windows-runner-set-up-testing\RunnerPOC\bin\Debug\net10.0\RunnerPOC.deps.json
+D:\windows-runner-set-up-testing\RunnerPOC\bin\Debug\net10.0\RunnerPOC.runtimeconfig.json
+D:\windows-runner-set-up-testing\RunnerPOC\bin\Debug\net10.0\RunnerPOC.dll
+D:\windows-runner-set-up-testing\RunnerPOC\bin\Debug\net10.0\RunnerPOC.pdb
+D:\windows-runner-set-up-testing\RunnerPOC\obj\Debug\net10.0\RunnerPOC.GeneratedMSBuildEditorConfig.editorconfig
+D:\windows-runner-set-up-testing\RunnerPOC\obj\Debug\net10.0\RunnerPOC.AssemblyInfoInputs.cache
+D:\windows-runner-set-up-testing\RunnerPOC\obj\Debug\net10.0\RunnerPOC.AssemblyInfo.cs
+D:\windows-runner-set-up-testing\RunnerPOC\obj\Debug\net10.0\RunnerPOC.csproj.CoreCompileInputs.cache
+D:\windows-runner-set-up-testing\RunnerPOC\obj\Debug\net10.0\RunnerPOC.dll
+D:\windows-runner-set-up-testing\RunnerPOC\obj\Debug\net10.0\refint\RunnerPOC.dll
+D:\windows-runner-set-up-testing\RunnerPOC\obj\Debug\net10.0\RunnerPOC.pdb
+D:\windows-runner-set-up-testing\RunnerPOC\obj\Debug\net10.0\RunnerPOC.genruntimeconfig.cache
+D:\windows-runner-set-up-testing\RunnerPOC\obj\Debug\net10.0\ref\RunnerPOC.dll
