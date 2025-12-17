@@ -1,4 +1,4 @@
-name: Windows Runner POC
+name: .NET Build & Publish (Local Runner)
 
 on:
   push:
@@ -7,20 +7,32 @@ on:
   workflow_dispatch:
 
 jobs:
-  test-runner:
+  build-publish:
     runs-on: self-hosted
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Verify runner identity
-        run: |
-          echo "Runner name: $env:RUNNER_NAME"
-          echo "Machine name: $env:COMPUTERNAME"
-          echo "User: $env:USERNAME"
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
 
-      - name: Test PowerShell execution
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --configuration Release --no-restore
+
+      - name: Publish to local folder
         run: |
-          Get-Date
-          Write-Host "Hello from self-hosted Windows runner"
+          $publishPath = "C:\deployments\runner-poc"
+          New-Item -ItemType Directory -Force -Path $publishPath
+          dotnet publish RunnerPOC/RunnerPOC.csproj `
+            --configuration Release `
+            --output $publishPath
+
+      - name: Verify published output
+        run: |
+          Get-ChildItem "C:\deployments\runner-poc"
