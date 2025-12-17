@@ -14,25 +14,19 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: '8.0.x'
+      - name: Verify .NET installed
+        run: dotnet --version
 
-      - name: Restore dependencies
+      - name: Restore
         run: dotnet restore
-
+          
       - name: Build
         run: dotnet build --configuration Release --no-restore
-
-      - name: Publish to local folder
+          
+      - name: Publish
         run: |
           $publishPath = "C:\deployments\runner-poc"
           New-Item -ItemType Directory -Force -Path $publishPath
           dotnet publish RunnerPOC/RunnerPOC.csproj `
             --configuration Release `
             --output $publishPath
-
-      - name: Verify published output
-        run: |
-          Get-ChildItem "C:\deployments\runner-poc"
