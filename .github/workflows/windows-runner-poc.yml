@@ -1,0 +1,26 @@
+name: Windows Runner POC
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  test-runner:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Verify runner identity
+        run: |
+          echo "Runner name: $env:RUNNER_NAME"
+          echo "Machine name: $env:COMPUTERNAME"
+          echo "User: $env:USERNAME"
+
+      - name: Test PowerShell execution
+        run: |
+          Get-Date
+          Write-Host "Hello from self-hosted Windows runner"
