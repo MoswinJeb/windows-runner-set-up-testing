@@ -22,7 +22,15 @@ jobs:
           
       - name: Build
         run: dotnet build --configuration Release --no-restore
-          
+      
+      - name: Debug repo structure
+        shell: powershell
+        run: |
+          Write-Host "Current path:"
+          pwd
+          Write-Host "Listing repo root:"
+          dir
+    
       - name: Publish
         run: |
           $publishPath = "C:\deployments\runner-poc"
