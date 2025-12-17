@@ -31,10 +31,10 @@ jobs:
           Write-Host "Listing repo root:"
           dir
     
-      - name: Publish
+      - name: Build & publish .NET app locally
+        shell: powershell
         run: |
           $publishPath = "C:\deployments\runner-poc"
           New-Item -ItemType Directory -Force -Path $publishPath
-          dotnet publish RunnerPOC/RunnerPOC.csproj `
-            --configuration Release `
-            --output $publishPath
+          dotnet publish RunnerPOC.csproj -c Release -o $publishPath
+
